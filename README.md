@@ -8,10 +8,10 @@ snort: Snort
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.snort](https://galaxy.ansible.com/devops-toolbox.snort)
+[https://galaxy.ansible.com/devopstoolbox.snort](https://galaxy.ansible.com/devopstoolbox.snort)
 
 ```bash
-ansible-galaxy install devops-toolbox.snort
+ansible-galaxy install devopstoolbox.snort
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: snort is configured
       import_role:
-        name: devops-toolbox.snort
+        name: devopstoolbox.snort
       vars:
         snort_packages_state: present
         snort_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
