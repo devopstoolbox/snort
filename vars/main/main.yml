@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+snort_repos_create: "{{ _snort_repos_create['all']
+  | union ( _snort_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+snort_repos_download: "{{ _snort_repos_download['all']
+  | union ( _snort_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+snort_templates_copy: "{{ _snort_templates_copy['all']
+  | union ( _snort_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+snort_services_enable: "{{ _snort_services_enable['all']
+  | union ( _snort_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+snort_selinux_enable: "{{ _snort_selinux_enable['all']
+  | union ( _snort_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+snort_packages_remove: "{{ _snort_packages_remove['all']
+  | union ( _snort_packages_remove[my_os]
+  | default([]) ) }}"
+snort_packages_repos: "{{ _snort_packages_repos['all']
+  | union ( _snort_packages_repos[my_os]
+  | default([]) ) }}"
+snort_packages_prereq: "{{ _snort_packages_prereq['all']
+  | union ( _snort_packages_prereq[my_os]
+  | default([]) ) }}"
+snort_packages_install: "{{ _snort_packages_install['all']
+  | union ( _snort_packages_install[my_os]
+  | default([]) ) }}"

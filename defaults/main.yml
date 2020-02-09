@@ -1,0 +1,19 @@
+---
+# defaults file for snort
+
+snort_packages_state: present
+snort_remove_packages: true
+snort_enable_service: true
+snort_enable_selinux: true
+snort_copy_templates: true
+snort_firewall_configure: true
+snort_firewall_rules:
+  - service: ssh
+  - port: 3389
+snort_users:
+  - user: devops
+    group: docker
+snort_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

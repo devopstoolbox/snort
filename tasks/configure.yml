@@ -1,0 +1,11 @@
+---
+# Configure snort
+
+- name: service is enabled and started
+  service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  become: true
+  loop: "{{ snort_services_enable }}"
+  when: snort_enable_service

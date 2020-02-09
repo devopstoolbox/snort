@@ -1,0 +1,10 @@
+---
+# Template configuration files for snort
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ snort_templates_copy }}"
+  when: snort_copy_templates

@@ -1,0 +1,17 @@
+---
+# Users and groups configuration for snort
+
+- name: defined groups are created
+  group:
+    name: "{{ item.group }}"
+    state: present
+  loop: "{{ snort_users }}"
+  become: true
+
+- name: users added to secondary groups
+  user:
+    name: "{{ item.user }}"
+    append: true
+    groups: "{{ item.group }}"
+  become: true
+  loop: "{{ snort_users }}"
